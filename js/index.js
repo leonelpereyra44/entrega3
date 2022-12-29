@@ -1,11 +1,10 @@
 
-//Para la proxima entrega añadir funciones de borrar libros, librosleidos y librosrepetidos
-// y corregir errores de que no se repita la lista de libros a listar
+//Para la proxima entrega añadir funciones de borrarlibro, libroleidos y librosrepetidos
 
-const listar = (flag) => {
+const listar = () => {
     
     let librosStorage = JSON.parse(localStorage.getItem("librosStorage"));
-    while (lista.hasChildNodes()) {
+    while (lista.hasChildNodes()) { //si la lista existe la limpio para volverla a llenar, porque de lo contrario se duplica
         lista.removeChild(lista.firstChild);
     }
     librosStorage.forEach(libro => {
@@ -18,8 +17,7 @@ const listar = (flag) => {
     });
 };
 
-const guardar = (inputs, flag) => {
-    let flag1 = flag;
+const guardar = (inputs) => {
     let libro = { //añado al objeto libro los valores de los inputs 
         nombre: inputs[1].value,
         editorial: inputs[3].value
@@ -39,15 +37,15 @@ const guardar = (inputs, flag) => {
     inputs[1].value = ""; //limpio los inputs 
     inputs[3].value = "";
     
-    listar(flag1);
+    listar();
 };
-let flag = true;
+
 let librosNuevos;
 let formulario = document.getElementById("formulario");
 formulario.addEventListener("submit", (e) => {
     e.preventDefault();
     let inputs = e.target.children; //obtengo los valores de los inputs dentro del formulario
-    guardar(inputs, flag); // guardar libros en localstorage
+    guardar(inputs); // guardar libros en localstorage
 });
 
 
