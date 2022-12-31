@@ -10,7 +10,7 @@ const listar = () => {
     librosStorage.forEach(libro => {
         let li = document.createElement("li");
         li.innerHTML = `
-        Libro: ${libro.nombre}
+        Libro: ${libro.nombre} --
         Editorial: ${libro.editorial}
         `;
         lista.append(li); 

@@ -8,9 +8,10 @@
 </head>
 <body>
     <h2>Bienvenido a nuestra biblioteca</h2>
+    <p>Los campos no deben estar vacíos ni pueden contener caracteres especiales</p>
     <form id="formulario" action="">
-        <label>Libro:</label><input type="text">
-        <label>Editorial:</label> <input type="text">
+        <label>Libro:</label><input type="text" pattern="([A-z0-9À-ž\s]){2,}" required>
+        <label>Editorial:</label> <input type="text" pattern="([A-z0-9À-ž\s]){2,}" required>
         <input type="submit" value="Enviar">
         <h3>Libros Añadidos:</h3>
         <ul id="lista"></ul>
